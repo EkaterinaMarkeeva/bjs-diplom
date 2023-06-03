@@ -8,7 +8,6 @@ logoutButton.action = function() {
 			location.reload();
 		} else {
 			this.setLoginErrorMessage(serverResponse.error);
-			throw serverResponse.error;
 		}
 	};
 	ApiConnector.logout(callback);
@@ -48,7 +47,7 @@ const moneyManagerCallback = (serverResponse) => {
 		ProfileWidget.showProfile(serverResponse.data);
 		this.setMessage(serverResponse.success, 'Операция выполнена успешно');
 	} else {
-		this.setMessage(!serverResponse.success, serverResponse.error);
+		this.setMessage(serverResponse.success, serverResponse.error);
 	}
 };
 

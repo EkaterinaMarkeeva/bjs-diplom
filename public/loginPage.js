@@ -7,7 +7,6 @@ userForm.loginFormCallback = function(data) {
             location.reload();
         } else {
             this.setLoginErrorMessage(serverResponse.error);
-            throw serverResponse.error;
         }
     };
     ApiConnector.login(data, callback);
@@ -19,7 +18,6 @@ userForm.registerFormCallback = function(data) {
             location.reload();
         } else {
             this.setRegisterErrorMessage(serverResponse.error);
-            throw serverResponse.error;
         }
     };
     ApiConnector.register(data, callback);
